@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Webjeda cards
+title: Betawiki
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Webjeda Cards is a Bootstrap based jekyll theme for portfolio, photography or any kind of blog.
@@ -22,8 +22,8 @@ default-image: webjeda-logo-big.jpg # If there is no featured image in a post th
 #footer
 built-by: webjeda
 copyright:
-   name: webjeda
-   link: 'http://blog.webjeda.com'
+   name: Le Beta-Lab - Fablab de la Bêta-Pi
+   link: 'http://labetapi.fr'
 
 # Build settings
 markdown: kramdown
