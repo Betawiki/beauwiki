@@ -3,9 +3,15 @@
 
   <div class="row mt20">
   {% if site.copyright.name %}
-  <div class="col-md-4 text-center" style="font-size: 12px; font-family: Arial;">CC <a target="_blank" href="{{site.copyright.link}}">{{site.copyright.name}}</a></div>
+  <div class="col-md-4 text-center" style="font-size: 1em; font-family: Arial;">CC <a target="_blank" href="{{site.copyright.link}}">{{site.copyright.name}}</a></div>
     {% endif %}
     
+  <div class="col-md-4 text-center" >
+  {% if site.built-by %}
+  <a target="_blank" href="http://webjeda.com"><img src="https://img.shields.io/badge/Built%20by-webjeda-blue.svg" alt="{{site.built-by}}"></a>
+  {% endif %}
+  </div>
+
   <div class="col-md-4 text-center">
      <a target="_blank" href="{{site.facebook}}"><li class="social facebook"><img src="{{site.baseurl}}/images/facebook.svg" alt="{{site.facebook}}"></li></a>    
       <a target="_blank" href="{{site.twitter}}"><li class="social twitter"><img src="{{site.baseurl}}/images/twitter.svg" alt="{{site.twitter}}"></li></a>      
