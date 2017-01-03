@@ -15,13 +15,13 @@ layout: default
                     <h3 class="panel-title pull-left">{{ post.title | truncate: 25 }}</h3><span class="post-meta pull-right"><!--small>{{ post.date | date: "%d/%m/%Y" }}</small--></span>
                   </div>
                   {% if post.img %}
-                  <img width="100%" src="{{site.baseurl}}/images/{{post.img}}" alt="{{post.title}}">
+                  <a href="{{ post.url | prepend: site.baseurl }}"><img width="100%" src="{{site.baseurl}}/images/{{post.img}}" alt="{{post.title}}"></a>
                   {% else %}
                   <img width="100%" src="{{site.baseurl}}/images/webjeda-logo-big.jpg" alt="{{site.title}}">
                   {% endif %}
-                  <div class="panel-body">
+                  <!--div class="panel-body">
                     <a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-primary btn-sm pull-right mt10" style="font-size: 1.5em; height: 30px;">+</a>
-                  </div>
+                  </div-->
                 </div>
             </div>
         
