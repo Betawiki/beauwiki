@@ -12,7 +12,23 @@ layout: default
                  
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    <h3 class="panel-title pull-left">{{ post.title | truncate: 25 }}</h3><span class="post-meta pull-right"><small>{{ post.date | date: "%-d %B %Y" }}</small></span>
+                    <h3 class="panel-title pull-left">{{ post.title | truncate: 25 }}</h3><span class="post-meta pull-right"><small>{% assign m = page.date | date: "%-m" %}
+		{{ page.date | date: "%-d" }}
+		{% case m %}
+		  {% when '1' %}Janvier
+		  {% when '2' %}Février
+		  {% when '3' %}Mars
+		  {% when '4' %}Avril
+		  {% when '5' %}Mai
+		  {% when '6' %}Juin
+		  {% when '7' %}Juillet
+		  {% when '8' %}Août
+		  {% when '9' %}Septembre
+		  {% when '10' %}Octobre
+		  {% when '11' %}Novembre
+		  {% when '12' %}Décembre
+		{% endcase %}
+{{ page.date | date: "%Y" }}</small></span>
                   </div>
                   {% if post.img %}
                   <img width="100%" src="{{site.baseurl}}/images/{{post.img}}" alt="{{post.title}}">
