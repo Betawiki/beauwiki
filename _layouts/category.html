@@ -11,8 +11,7 @@ layout: page
 {% endunless %}
 
 {% for post in site.categories.[page.category] %}
-    <div class="post-preview">
-        <div class="col-md-4 card">
+	<div class="col-md-4 card">
                 <div class="panel panel-default">
                     <div class="panel-body"><a href="{{ post.url | prepend: site.baseurl }}">
                         <h3 class="panel-title pull-left">{{ post.title }}</h3>
@@ -38,5 +37,4 @@ layout: page
                     </div><!-- /.panel-body -->
                 </div><!-- /.panel panel-default -->
             </div><!-- /.col-md-4-cards -->
-    </div>
 {% endfor %}
