@@ -2,10 +2,17 @@
 layout: page
 ---
 
-<div class="home">
-    <div class="row pack">
-        {% for post in site.categories.[page.category] %}   
-            <div class="col-md-4 card">
+{% unless page.content == '' %}
+ <p>{{ page.content }}</p>
+{% endunless %}
+
+{% unless site.categories.[page.category] | size > 0 %}
+    <p>No posts in this category at this time.</p>
+{% endunless %}
+
+{% for post in site.categories.[page.category] %}
+    <div class="post-preview">
+        <div class="col-md-4 card">
                 <div class="panel panel-default">
                     <div class="panel-body"><a href="{{ post.url | prepend: site.baseurl }}">
                         <h3 class="panel-title pull-left">{{ post.title }}</h3>
@@ -31,37 +38,5 @@ layout: page
                     </div><!-- /.panel-body -->
                 </div><!-- /.panel panel-default -->
             </div><!-- /.col-md-4-cards -->
-        {% endfor %}
-    </div><!-- /.row pack -->
-    
-<div class="row">
-    <div class="col-md-5">  </div>
-    <div class="col-md-5">
-        {% if paginator.total_pages > 1 %}
-            <ul class="pagination">
-                {% if paginator.previous_page %}
-                    <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
-                    {% else %}
-                        <li><span>&laquo;</span></li>
-                    {% endif %}
-                {% for page in (1..paginator.total_pages) %}
-                    {% if page == paginator.page %}
-                        <li class="active"><span><em>{{ page }}</em></span></li>
-                        {% elsif page == 1 %}
-                            <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
-                        {% else %}
-                            <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                {% if paginator.next_page %}
-                    <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
-                    {% else %}
-                        <li><span >&raquo;</span></li>
-                    {% endif %}
-            </ul><!-- /.pagination -->
-        {% endif %}
-    </div><!-- /.col-md-5 -->
-    <div class="col-md-5">  </div>
-</div><!-- /.row -->
-
-</div><!-- /.home -->
+    </div>
+{% endfor %}
