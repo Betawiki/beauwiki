@@ -25,5 +25,15 @@ title: Découpe_laser
 ---
 
 {% for post in site.categories.Découpe_laser %}
- <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
+	<li>
+		<span>
+			{{ post.date | date_to_string }}
+		</span> 
+		&nbsp; 
+		<a href="{{ post.url }}">{{ post.title }}</a>
+	</li>
+{% endfor %}
+
+{% for post in site.categories.Découpe_laser %}
+<a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
 {% endfor %}
