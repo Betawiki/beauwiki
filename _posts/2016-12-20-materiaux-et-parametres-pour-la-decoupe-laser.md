@@ -3,6 +3,7 @@ layout: post
 title: Découpe laser : matériaux et paramètres
 categories: Découpe_laser
 author: Camille
+img: trotec.jpg
 ---
 ## Les matériaux à ne JAMAIS utiliser pour la découpe/gravure laser
 

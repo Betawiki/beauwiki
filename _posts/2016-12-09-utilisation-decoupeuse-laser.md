@@ -3,6 +3,7 @@ layout: post
 title: Utilisation de la découpeuse laser
 author: Camille
 categories: Découpe_laser
+img: trotec.jpg
 ---
 ## Préparez votre fichier
 

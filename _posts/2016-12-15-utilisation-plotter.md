@@ -3,6 +3,7 @@ layout: post
 title: Utilisation du plotter de découpe
 categories: Plotter
 author: Camille
+img: silhouette.jpg
 ---
 ## Préparez votre fichier
 
