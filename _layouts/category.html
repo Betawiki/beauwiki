@@ -18,14 +18,14 @@ layout: page
             {{ post.title }}
         </p>
     </a>
-    <p class="post-meta">
+    <span class="post-meta">
       Créé par  
       {% if post.author %}
         {{ post.author }}
       {% else %}
         {{ site.title }}
       {% endif %} 
-      on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
+      le {{ post.date | date: "%d/%m/%Y" }}
+    </span>
 </div>
 {% endfor %}
