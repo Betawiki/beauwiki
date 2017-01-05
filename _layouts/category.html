@@ -1,7 +1,6 @@
 ---
 layout: page
 ---
-<h2>Articles classés dans la catégorie : {{ page.title }}</h2>
 
 {% unless page.content == '' %}
   <p>{{ page.content }}</p>
@@ -14,11 +13,9 @@ layout: page
 {% for post in site.categories.[page.category] %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <p class="post-title">            
-            {{ post.title }}
-        </p>
+        <h4 class="post-title">{{ post.title }}</h4>
     </a>
-    <span class="post-meta">
+    <p class="post-meta" style="font-size: 10px; display: inline-block;">
       Créé par  
       {% if post.author %}
         {{ post.author }}
@@ -26,6 +23,6 @@ layout: page
         {{ site.title }}
       {% endif %} 
       le {{ post.date | date: "%d/%m/%Y" }}
-    </span>
+    </p>
 </div>
 {% endfor %}
