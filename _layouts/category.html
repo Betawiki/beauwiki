@@ -2,96 +2,66 @@
 layout: page
 ---
 
-<!--{% unless page.content == '' %}
-  <p>{{ page.content }}</p>
-{% endunless %}
-
-{% unless site.categories.[page.category] | size > 0 %}
-  <p>No posts in this category at this time.</p>
-{% endunless %}
-
-{% for post in site.categories.[page.category] %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h5 class="post-title">{{ post.title }}</h5>
-    </a>
-    <!--p class="post-meta" style="font-size: 12px; display: inline-block;">
-      Créé par  
-      {% if post.author %}
-        {{ post.author }}
-      {% else %}
-        {{ site.title }}
-      {% endif %} 
-      le {{ post.date | date: "%d/%m/%Y" }}
-    </p-->
-</div>
-{% endfor %}-->
-
 <div class="home">
     <div class="row pack">
         {% for post in paginator.posts %}   
             <div class="col-md-4 card">
-    
                 <div class="panel panel-default">
-                  <div class="panel-body"><a href="{{ post.url | prepend: site.baseurl }}">
-                    <h3 class="panel-title pull-left">{{ post.title }}</h3><span class="post-meta pull-right"></span>
-                  </div>
-                  {% if post.img %}
-                  <img width="100%" src="{{site.baseurl}}/images/{{post.img}}" alt="{{post.title}}">
-                  {% else %}
-                  <img width="100%" src="{{site.baseurl}}/images/vache.jpg" alt="{{site.title}}">
-                  {% endif %}
-                  <div class="panel-body">
-                    <div class="post-categories">
-                        {% if post %}
-                            {% assign categories = post.categories %}
+                    <div class="panel-body"><a href="{{ post.url | prepend: site.baseurl }}">
+                        <h3 class="panel-title pull-left">{{ post.title }}</h3>
+                        <span class="post-meta pull-right"></span>
+                    </div><!-- /.panel-body -->
+                    {% if post.img %}
+                        <img width="100%" src="{{site.baseurl}}/images/{{post.img}}" alt="{{post.title}}">
                         {% else %}
-                            {% assign categories = page.categories %}
+                            <img width="100%" src="{{site.baseurl}}/images/vache.jpg" alt="{{site.title}}">
                         {% endif %}
-                        {% for category in categories %}
-                        <a href="{{site.baseurl}}/categories/{{category|slugize}}" class="btn btn-primary btn-sm">{{category}}</a>
-                        {% unless forloop.last %}&nbsp;{% endunless %}
-                        {% endfor %}
-                    </div>
-                  </div>
-                  </a>
-                </div>
-            </div>
-        
-          {% endfor %}
-
-    </div> 
+                    <div class="panel-body">
+                        <div class="post-categories">
+                            {% if post %}
+                                    {% assign categories = post.categories %}
+                                {% else %}
+                                    {% assign categories = page.categories %}
+                                {% endif %}
+                            {% for category in categories %}
+                                <a href="{{site.baseurl}}/categories/{{category|slugize}}" class="btn btn-primary btn-sm">{{category}}</a>
+                                {% unless forloop.last %}&nbsp;{% endunless %}
+                                {% endfor %}
+                        </div><!-- /.post-categories -->
+                    </div><!-- /.panel-body -->
+                </div><!-- /.panel panel-default -->
+            </div><!-- /.col-md-4-cards -->
+        {% endfor %}
+    </div><!-- /.row pack -->
     
 <div class="row">
     <div class="col-md-5">  </div>
     <div class="col-md-5">
         {% if paginator.total_pages > 1 %}
-        <ul class="pagination">
-          {% if paginator.previous_page %}
-            <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
-          {% else %}
-            <li><span>&laquo;</span></li>
-          {% endif %}
-
-          {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-              <li class="active"><span><em>{{ page }}</em></span></li>
-            {% elsif page == 1 %}
-            <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
-            {% else %}
-            <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-            {% endif %}
-          {% endfor %}
-
-          {% if paginator.next_page %}
-            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
-          {% else %}
-            <li><span >&raquo;</span></li>
-          {% endif %}
-          </ul>
+            <ul class="pagination">
+                {% if paginator.previous_page %}
+                    <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
+                    {% else %}
+                        <li><span>&laquo;</span></li>
+                    {% endif %}
+                {% for page in (1..paginator.total_pages) %}
+                    {% if page == paginator.page %}
+                        <li class="active"><span><em>{{ page }}</em></span></li>
+                        {% elsif page == 1 %}
+                            <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+                        {% else %}
+                            <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                {% if paginator.next_page %}
+                    <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
+                    {% else %}
+                        <li><span >&raquo;</span></li>
+                    {% endif %}
+            </ul><!-- /.pagination -->
         {% endif %}
-
-    </div>
+    </div><!-- /.col-md-5 -->
     <div class="col-md-5">  </div>
-</div>
-</div>
+</div><!-- /.row -->
+
+</div><!-- /.home -->
