@@ -1,10 +1,7 @@
 ---
-comments: hidden
-published: true
 layout: post
 title: Utilisation du plotter de découpe
-categories:
-  - Plotter
+categories: Plotter
 author: Camille
 ---
 ## Préparez votre fichier
