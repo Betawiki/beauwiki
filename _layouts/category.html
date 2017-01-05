@@ -13,9 +13,9 @@ layout: page
 {% for post in site.categories.[page.category] %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h4 class="post-title">{{ post.title }}</h4>
+        <h5 class="post-title">{{ post.title }}</h5>
     </a>
-    <p class="post-meta" style="font-size: 10px; display: inline-block;">
+    <!--p class="post-meta" style="font-size: 12px; display: inline-block;">
       Créé par  
       {% if post.author %}
         {{ post.author }}
@@ -23,6 +23,6 @@ layout: page
         {{ site.title }}
       {% endif %} 
       le {{ post.date | date: "%d/%m/%Y" }}
-    </p>
+    </p-->
 </div>
 {% endfor %}
