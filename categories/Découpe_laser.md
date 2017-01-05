@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /categories/Découpe_laser
-title: Découpe laser
+title: Découpe_laser
 ---
 
 <div id="archives">
@@ -21,3 +21,9 @@ title: Découpe laser
   </div>
 {% endfor %}
 </div>
+
+---
+
+{% for post in site.categories.Découpe_laser %}
+ <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
