@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Matériaux et paramètres pour la découpe laser
+title: Découpe laser : matériaux et paramètres
 categories: Découpe_laser
 author: Camille
 ---
