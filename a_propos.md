@@ -1,7 +1,7 @@
 ---
 layout: page
 title: À propos
-permalink: /about/
+permalink: /a_propos/
 ---
 
 lala
