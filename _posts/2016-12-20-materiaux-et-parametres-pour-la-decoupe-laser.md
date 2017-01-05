@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Matériaux et paramètres pour la découpe laser
-categories: Découpeuse_laser
+categories: Découpe_laser
 author: Camille
 ---
 ## Les matériaux à ne JAMAIS utiliser pour la découpe/gravure laser

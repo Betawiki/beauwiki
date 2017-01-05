@@ -2,7 +2,7 @@
 layout: post
 title: Utilisation de la découpeuse laser
 author: Camille
-categories: Découpeuse_laser
+categories: Découpe_laser
 ---
 ## Préparez votre fichier
 
