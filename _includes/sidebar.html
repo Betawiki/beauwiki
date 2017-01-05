@@ -7,18 +7,6 @@
             {% endif %}
         </div>
             
-        
-        <div class="mt10 recent">
-            <h2>Articles récents</h2>        
-             <ul>
-                {% for post in site.related_posts limit:3 %}
-
-                      <li>
-                      <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><small>&nbsp;&nbsp;{{ post.date | date_to_string }}</small></p>
-                      </li>
-
-                {% endfor %}
-              </ul>
-        </div>
+        <div class="col-md-4 text-center" style="font-size: 0.8em; font-family: Arial; margin-top: -5px; margin-bottom: 10px;"><a href="http://prose.io" class="btn btn-primary btn-sm">Modifier</a></div>
 
 </div>
