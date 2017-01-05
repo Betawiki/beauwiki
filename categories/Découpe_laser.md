@@ -1,5 +1,5 @@
 ---
 layout: category
-title: Catégorie : Découpe_laser
+title: Découpe_laser
 category: Découpe_laser
 ---
