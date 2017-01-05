@@ -3,38 +3,15 @@ layout: default
 ---
 
 {% unless page.content == '' %}
- <p>{{ page.content }}</p>
+  <p>{{ page.content }}</p>
 {% endunless %}
 
 {% unless site.categories.[page.category] | size > 0 %}
-    <p>No posts in this category at this time.</p>
+  <p>No posts in this category at this time.</p>
 {% endunless %}
 
 {% for post in site.categories.[page.category] %}
-            <div class="col-md-4 card">
-                <div class="panel panel-default">
-                    <div class="panel-body"><a href="{{ post.url | prepend: site.baseurl }}">
-                        <h3 class="panel-title pull-left">{{ post.title }}</h3>
-                        <span class="post-meta pull-right"></span>
-                    </div><!-- /.panel-body -->
-                    {% if post.img %}
-                        <img width="100%" src="{{site.baseurl}}/images/{{post.img}}" alt="{{post.title}}">
-                        {% else %}
-                            <img width="100%" src="{{site.baseurl}}/images/vache.jpg" alt="{{site.title}}">
-                        {% endif %}
-                    <div class="panel-body">
-                        <div class="post-categories">
-                            {% if post %}
-                                    {% assign categories = post.categories %}
-                                {% else %}
-                                    {% assign categories = page.categories %}
-                                {% endif %}
-                            {% for category in categories %}
-                                <a href="{{site.baseurl}}/categories/{{category|slugize}}" class="btn btn-primary btn-sm">{{category}}</a>
-                                {% unless forloop.last %}&nbsp;{% endunless %}
-                                {% endfor %}
-                        </div><!-- /.post-categories -->
-                    </div><!-- /.panel-body -->
-                </div><!-- /.panel panel-default -->
-            </div><!-- /.col-md-4-cards -->
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}"><h5 class="post-title">{{ post.title }}</h5></a>
+</div>
 {% endfor %}
